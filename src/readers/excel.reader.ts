@@ -9,7 +9,7 @@ export function readExcel(path: string): string {
     const sheet = workbook.Sheets[name];
     const rows = xlsx.utils.sheet_to_json(sheet, { header: 1 });
 
-    rows.forEach(row => {
+    rows.forEach((row:any) => {
       text += row.join(" ") + "\n";
     });
   });
