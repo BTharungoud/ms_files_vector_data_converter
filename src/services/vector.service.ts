@@ -12,6 +12,6 @@ export async function saveVector(
     `INSERT INTO file_vectors
      (id, upload_id, chunk_index, content, embedding)
      VALUES ($1, $2, $3, $4, $5)`,
-    [uuid(), uploadId, index, content, embedding]
+    [uuid(), uploadId, index, content, `[${embedding.join(",")}]`]
   );
 }
